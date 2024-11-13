@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="6.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
+    <servlet>
+        <servlet-name>ServletRegistros</servlet-name>
+        <servlet-class>controladores.ServletRegistros</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Servelet_Inicio_Secion</servlet-name>
+        <servlet-class>controladores.Servelet_Inicio_Secion</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ctrlEmpleados</servlet-name>
+        <servlet-class>controladores.ctrlEmpleados</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>cerrarSesion</servlet-name>
+        <servlet-class>controladores.cerrarSesion</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletRegistros</servlet-name>
+        <url-pattern>/ServletRegistros</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Servelet_Inicio_Secion</servlet-name>
+        <url-pattern>/Servelet_Inicio_Secion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ctrlEmpleados</servlet-name>
+        <url-pattern>/ctrlEmpleados</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>cerrarSesion</servlet-name>
+        <url-pattern>/cerrarSesion</url-pattern>
+    </servlet-mapping>
+</web-app>

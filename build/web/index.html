@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShoeUp</title>
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="overflow-x-hidden">
+
+  <script defer>
+    function toggleMenu() {
+      const menu = document.getElementById("mobile-menu");
+      menu.classList.toggle("hidden");
+    }
+  </script>
+
+  <nav class="relative w-full" style="background-color: #C4A484;">
+    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <div class="relative flex h-16 items-center justify-between">
+        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+          <button
+            type="button"
+            class="inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+            onclick="toggleMenu()"
+          >
+            <span class="sr-only">Abrir Menu</span>
+            <svg class="h-6 w-6 block" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+            <svg class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="flex flex-1 items-center justify-center sm:justify-start">
+          <img class="h-12 w-auto" src="img/logo.png" alt="Logo ShoeUp" />
+        </div>
+        <div class="hidden sm:flex sm:ml-6 space-x-4 items-center justify-center">
+          <a href="#inicio" class="rounded-md px-3 py-2 text-xl font-medium text-black hover:bg-black hover:text-white">Inicio</a>
+          <a href="#nosotros" class="rounded-md px-3 py-2 text-xl font-medium text-black hover:bg-black hover:text-white">Sobre Nosotros</a>
+          <a href="#categorias" class="rounded-md px-3 py-2 text-xl font-medium text-black hover:bg-black hover:text-white">Categorías</a>
+          <a href="#sucursales" class="rounded-md px-3 py-2 text-xl font-medium text-black hover:bg-black hover:text-white">Sucursales</a>
+          <div class="flex items-center justify-center">
+            <img class="h-12 w-auto" src="img\carrito.png" alt="Carrito de Compras" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute inset-x-0 top-full text-white hidden sm:hidden" id="mobile-menu" style="background-color: #C4A484; z-index: 50;">
+      <div class="space-y-1 px-2 pb-3 pt-2">
+        <a href="#inicio" class="block rounded-md px-3 py-2 text-base font-medium text-black hover:bg-black hover:text-white">Inicio</a>
+        <a href="#nosotros" class="block rounded-md px-3 py-2 text-base font-medium text-black hover:bg-black hover:text-white">Sobre Nosotros</a>
+        <a href="#categorias" class="block rounded-md px-3 py-2 text-base font-medium text-black hover:bg-black hover:text-white">Categorías</a>
+        <a href="#sucursales" class="block rounded-md px-3 py-2 text-base font-medium text-black hover:bg-black hover:text-white">Sucursales</a>
+        <div class="flex items-center justify-center">
+          <img class="h-12 w-auto" src="img/carrito.png" alt="Carrito de Compras" />
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sección de inicio -->
+  <section id="inicio" class="w-full overflow-hidden">
+    <div class="flex flex-col sm:flex-row h-screen w-full max-w-full mx-auto">
+      <div class="sm:w-1/2 w-full h-64 sm:h-full bg-cover bg-center" style="background-image: url('img/ip.webp');"></div>
+
+      <div class="sm:w-1/2 w-full flex items-center justify-center text-center p-6 sm:p-12" style="background: #DBB996;">
+        <div class="max-w-md w-full">
+          <h1 class="text-4xl font-bold text-black mb-4 hover:text-white">Bienvenido a ShoeUp</h1>
+          <p class="text-2xl text-white mb-8 hover:text-black">En ShoeUp cada par cuenta una historia. Nos inspira la calidad y la pasión por el diseño, para que tú puedas dar el mejor paso.</p>
+          <div class="space-x-4 flex justify-center">
+              <a href="registro.jsp"> <button class="bg-white text-black py-2 px-4 rounded-md border-2 border-black hover:bg-black hover:text-white">Registro</button><a>
+               <a href="inicio_Sesion.jsp"><button class="bg-black text-white py-2 px-4 rounded-md border-2 border-white hover:bg-white hover:text-black">Iniciar Sesión</button><a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Sobre Nosotros -->
+  <section id="nosotros" class="bg-white py-12 overflow-hidden">
+    <h2 class="text-center text-3xl font-bold text-yellow-900 mb-8">Sobre Nosotros</h2>
+    <div class="flex flex-col sm:flex-row items-stretch max-w-5xl mx-auto px-6 sm:px-8">
+      <div class="sm:w-1/2 flex justify-center sm:justify-end items-stretch">
+        <div class="w-full h-full flex items-center">
+          <img src="img/sucursal.webp" alt="Imagen sobre nosotros" class="rounded-lg w-full sm:w-auto h-96 sm:h-full object-cover">
+        </div>
+      </div>
+
+      <div class="sm:w-1/2 flex items-center text-center sm:text-left sm:pl-8">
+        <div class="p-4">
+          <p class="text-2xl text-black">
+            Nos dedicamos a ofrecer calzado que combina estilo, comodidad y durabilidad, para que encuentres el par perfecto en cada visita.
+            Nuestro compromiso es brindar una experiencia de compra cálida y acogedora, donde cada detalle cuenta para que sientas la diferencia.
+            <br><br>
+            Con una amplia variedad de opciones para toda la familia, desde modelos clásicos hasta las últimas tendencias, queremos que cada paso
+            que des con nuestro calzado sea una muestra de tu estilo y personalidad. Nuestra misión es ayudarte a encontrar el calzado perfecto
+            que te acompañe en cada aventura, sin importar la ocasión.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de categorías -->
+  <section id="categorias" class="py-12 bg-yellow-700">
+    <h2 class="text-center text-3xl font-bold text-white mb-8">Categorías</h2>
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-6">
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-4">
+        <img src="img/deportivos.jpeg" alt="Deportivos" class="w-full h-48 object-cover">
+        <h3 class="text-xl font-semibold mt-4 text-black">Deportivos</h3>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-4">
+        <img src="img/dama.jpg" alt="Formales para Dama" class="w-full h-48 object-cover">
+        <h3 class="text-xl font-semibold mt-4 text-black">Formales para Dama</h3>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden text-center p-4">
+        <img src="img/caballeros.jpeg" alt="Formales para Caballero" class="w-full h-48 object-cover">
+        <h3 class="text-xl font-semibold mt-4 text-black">Formales para Caballero</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Sucursales -->
+  <section id="sucursales" class="bg-gradient-to-b from-yellow-100 to-yellow-200 py-12">
+    <h2 class="text-center text-3xl font-bold text-yellow-900 mb-8">Sucursales</h2>
+    <div class="max-w-4xl mx-auto space-y-8 px-6">
+      <div class="text-center">
+        <h3 class="text-xl font-semibold text-gray-700">Sucursal Centro</h3>
+        <p>Dirección: Calle Delgado #123, San Salvador, San Salvador</p>
+        <p>Teléfono: (503) 2210-1123</p>
+        <p>Horario: Lunes a Sábado, 9:00 am - 6:00 pm</p>
+      </div>
+      <div class="text-center">
+        <h3 class="text-xl font-semibold text-gray-700">Sucursal Santa Tecla</h3>
+        <p>Dirección: Boulevard del Hipódromo #456, Santa Tecla, La Libertad</p>
+        <p>Teléfono: (503) 2245-3344</p>
+        <p>Horario: Lunes a Domingo, 10:00 am - 7:00 pm</p>
+      </div>
+      <div class="text-center">
+        <h3 class="text-xl font-semibold text-gray-700">Sucursal San Miguel</h3>
+        <p>Dirección: Avenida Roosevelt #789, San Miguel, San Miguel</p>
+        <p>Teléfono: (503) 2619-5566</p>
+        <p>Horario: Lunes a Sábado, 9:30 am - 6:30 pm</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-yellow-800 py-4 text-center text-white">
+    <p>Derechos Reservados © ShoeUp 2024</p>
+  </footer>
+
+</body>
+</html>

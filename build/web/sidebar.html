@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShoeUp</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.2/alpine.js" defer></script>
+</head>
+<body class="flex min-h-screen bg-white">
+
+    <!-- Sidebar -->
+    <aside class="w-64 text-white flex flex-col" style="background: #DBB996;">
+        <div class="px-6 py-4">
+            <h2 class="text-2xl font-bold">Administrador</h2>
+        </div>
+        <nav class="flex-1 px-6">
+            <ul class="space-y-4">
+                <li>
+                    <a href="#dashboard" class="flex items-center text-white font-bold hover:text-black hover:bg-white border border-brown-500 p-2 rounded-md">
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="ctrlEmpleado?accion=listar" class="flex items-center text-white font-bold hover:text-black hover:bg-white border border-brown-500 p-2 rounded-md">
+                        Gestión de Empleados
+                    </a>
+                </li>
+                <li>
+                    <a href="#gestion-clientes" class="flex items-center text-white font-bold hover:text-black hover:bg-white border border-brown-500 p-2 rounded-md">
+                        Gestión de Clientes
+                    </a>
+                </li>
+                <li>
+                    <a href="#configuracion" class="bg-black flex items-center text-white font-bold hover:text-black hover:bg-white border border-brown-500 p-2 rounded-md">
+                        Configuración
+                    </a>
+                </li>
+                <!-- Botón desplegable "Más" -->
+                <li x-data="{ open: false }">
+                    <button @click="open = !open" class="bg-black flex items-center justify-between w-full text-white font-bold hover:text-black hover:bg-white border border-brown-500 p-2 rounded-md focus:outline-none">
+                        Más
+                        <svg :class="{'rotate-180': open}" class="w-4 h-4 transition-transform transform" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.293 9.293a1 1 0 011.414 0L10 12.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <ul x-show="open" class="mt-2 space-y-2 pl-4" x-cloak>
+                        <li>
+                            <a href="#gestion-usuarios" class="flex items-center text-white font-bold hover:text-black hover:bg-white border border-brown-500 p-2 rounded-md">
+                                Gestión de Usuarios
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#gestion-categorias" class="flex items-center text-white font-bold hover:text-black hover:bg-white border border-brown-500 p-2 rounded-md">
+                                Gestión de Categorías
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#gestion-inventarios" class="flex items-center text-white font-bold hover:text-black hover:bg-white border border-brown-500 p-2 rounded-md">
+                                Gestión de Inventarios
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#gestion-formas-pago" class="flex items-center text-white font-bold hover:text-black hover:bg-white border border-brown-500 p-2 rounded-md">
+                                Gestión de Formas de Pago
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="px-6 py-4">
+            <a href="cerrarSesion" class="w-full bg-red-600 text-white py-2 rounded-md hover:bg-red-700 text-center block">
+                Cerrar Sesión
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6 text-center">
+        <h1 class="text-2xl font-semibold mb-4">ShoeUp</h1>
+        <img src="img/logo.png" alt="Logo ShoeUp" class="mx-auto mb-4" style="height: 64px;">
+        <p>Bienvenido: Admin</p>
+        <p>Hora actual: <span id="horaActual"></span></p>
+    </main>
+
+    <!-- Script para mostrar la hora actual -->
+    <script>
+        function actualizarHora() {
+            const fecha = new Date();
+            const hora = fecha.getHours().toString().padStart(2, '0');
+            const minutos = fecha.getMinutes().toString().padStart(2, '0');
+            document.getElementById("horaActual").innerText = `${hora}:${minutos}`;
+        }
+        actualizarHora();
+        setInterval(actualizarHora, 60000); // Actualiza cada minuto
+    </script>
+</body>
+</html>

@@ -16,6 +16,10 @@
         <servlet-name>cerrarSesion</servlet-name>
         <servlet-class>controladores.cerrarSesion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletError</servlet-name>
+        <servlet-class>controladores.ServletError</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletRegistros</servlet-name>
         <url-pattern>/ServletRegistros</url-pattern>
@@ -32,4 +36,23 @@
         <servlet-name>cerrarSesion</servlet-name>
         <url-pattern>/cerrarSesion</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletError</servlet-name>
+        <url-pattern>/ServletError</url-pattern>
+    </servlet-mapping>
+    <error-page>
+    <error-code>404</error-code>
+    <location>/ServletError</location>
+    </error-page>
+
+    <error-page>
+        <error-code>500</error-code>
+        <location>/ServletError</location>
+    </error-page>
+
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/ServletError</location>
+    </error-page>
+
 </web-app>

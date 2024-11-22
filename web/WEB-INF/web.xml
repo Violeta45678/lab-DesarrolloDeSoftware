@@ -16,6 +16,22 @@
         <servlet-name>cerrarSesion</servlet-name>
         <servlet-class>controladores.cerrarSesion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ctrlCategorias</servlet-name>
+        <servlet-class>controladores.ctrlCategorias</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ctrlClientes</servlet-name>
+        <servlet-class>controladores.ctrlClientes</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ctrlFacturas</servlet-name>
+        <servlet-class>controladores.ctrlFacturas</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ctrlFormasDePago</servlet-name>
+        <servlet-class>controladores.ctrlFormasDePago</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletRegistros</servlet-name>
         <url-pattern>/ServletRegistros</url-pattern>
@@ -31,5 +47,21 @@
     <servlet-mapping>
         <servlet-name>cerrarSesion</servlet-name>
         <url-pattern>/cerrarSesion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ctrlCategorias</servlet-name>
+        <url-pattern>/ctrlCategorias</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ctrlClientes</servlet-name>
+        <url-pattern>/ctrlClientes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ctrlFacturas</servlet-name>
+        <url-pattern>/ctrlFacturas</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ctrlFormasDePago</servlet-name>
+        <url-pattern>/ctrlFormasDePago</url-pattern>
     </servlet-mapping>
 </web-app>

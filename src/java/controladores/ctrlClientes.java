@@ -34,7 +34,7 @@ public class ctrlClientes extends HttpServlet {
             out.println("<html lang='es'>");
             out.println("<head>");
             out.println("<meta charset='UTF-8'>");
-            out.println("<title>Gestión de Clientes - ShoeUp</title>");
+            out.println("<title>Gestión de Clientes</title>");
             out.println("<link href='https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css' rel='stylesheet'>");
             out.println("</head>");
             out.println("<body class='bg-white'>");
@@ -102,17 +102,12 @@ public class ctrlClientes extends HttpServlet {
                 Cliente cliente = null;
                 String tituloFormulario = "Agregar Cliente";
                 String accionFormulario = "insertar";
-                String direccion = "";
 
                 if (accion.equals("editar")) {
                     int idCliente = Integer.parseInt(request.getParameter("idCliente"));
                     cliente = Cliente.buscarCliente(idCliente);
                     tituloFormulario = "Actualizar Cliente";
                     accionFormulario = "actualizar";
-
-                    if (cliente != null) {
-                        direccion = cliente.getDireccion();
-                    }
                 }
 
                 out.println("<div class='mt-6 bg-brown-100 p-6 rounded-lg shadow-md border border-brown-500 max-w-xl mx-auto'>");
@@ -130,7 +125,10 @@ public class ctrlClientes extends HttpServlet {
                 out.println("<input type='text' name='apellido' value='" + (cliente != null ? cliente.getApellido() : "") + "' class='w-full mb-4 px-4 py-2 border border-brown-500 rounded focus:outline-none' required>");
                 
                 out.println("<label class='block text-brown-700 font-medium mb-2'>Dirección:</label>");
-                out.println("<input type='text' name='direccion' value='" + direccion + "' class='w-full mb-4 px-4 py-2 border border-brown-500 rounded focus:outline-none' required>");
+                out.println("<input type='text' name='direccion' value='" + (cliente != null ? cliente.getDireccion() : "") + "' class='w-full mb-4 px-4 py-2 border border-brown-500 rounded focus:outline-none' required>");
+
+                out.println("<label class='block text-brown-700 font-medium mb-2'>ID Usuario:</label>");
+                out.println("<input type='number' name='usuarioId' value='" + (cliente != null ? cliente.getUsuarioId() : "") + "' class='w-full mb-4 px-4 py-2 border border-brown-500 rounded focus:outline-none' required>");
 
                 out.println("<div class='flex justify-between'>");
                 out.println("<button type='submit' class='bg-yellow-800 text-white py-2 px-4 rounded-md font-semibold hover:bg-yellow-700'>" + (accion.equals("nuevo") ? "Guardar" : "Actualizar") + "</button>");
@@ -195,5 +193,10 @@ public class ctrlClientes extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+    }
+
+    @Override
+    public String getServletInfo() {
+        return "Controlador para gestionar clientes";
     }
 }

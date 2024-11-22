@@ -21,52 +21,62 @@
                         Dashboard
                     </a>
                 </li>
-                <li>
+              <li>
                     <a href="ctrlEmpleado?accion=listar" class="flex items-center text-white font-bold hover:text-black hover:bg-white border border-brown-500 p-2 rounded-md">
                         Gestión de Empleados
                     </a>
                 </li>
                 <li>
-                    <a href="#gestion-clientes" class="flex items-center text-white font-bold hover:text-black hover:bg-white border border-brown-500 p-2 rounded-md">
+                    <a href="ctrlClientes?accion=listar" class="flex items-center text-white font-bold hover:text-black hover:bg-white border border-brown-500 p-2 rounded-md">
                         Gestión de Clientes
                     </a>
                 </li>
                 <li>
-                    <a href="#configuracion" class="bg-black flex items-center text-white font-bold hover:text-black hover:bg-white border border-brown-500 p-2 rounded-md">
-                        Configuración
+                    <a href="ctrlCategorias?accion=listar" class="flex items-center text-white font-bold hover:text-black hover:bg-white border border-brown-500 p-2 rounded-md">
+                        Gestión de Categorias
                     </a>
                 </li>
-                <!-- Botón desplegable "Más" -->
-                <li x-data="{ open: false }">
-                    <button @click="open = !open" class="bg-black flex items-center justify-between w-full text-white font-bold hover:text-black hover:bg-white border border-brown-500 p-2 rounded-md focus:outline-none">
-                        Más
-                        <svg :class="{'rotate-180': open}" class="w-4 h-4 transition-transform transform" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M5.293 9.293a1 1 0 011.414 0L10 12.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                    <ul x-show="open" class="mt-2 space-y-2 pl-4" x-cloak>
-                        <li>
-                            <a href="#gestion-usuarios" class="flex items-center text-white font-bold hover:text-black hover:bg-white border border-brown-500 p-2 rounded-md">
-                                Gestión de Usuarios
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#gestion-categorias" class="flex items-center text-white font-bold hover:text-black hover:bg-white border border-brown-500 p-2 rounded-md">
-                                Gestión de Categorías
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#gestion-inventarios" class="flex items-center text-white font-bold hover:text-black hover:bg-white border border-brown-500 p-2 rounded-md">
-                                Gestión de Inventarios
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#gestion-formas-pago" class="flex items-center text-white font-bold hover:text-black hover:bg-white border border-brown-500 p-2 rounded-md">
-                                Gestión de Formas de Pago
-                            </a>
-                        </li>
-                    </ul>
+                <li>
+                    <a href="ctrlFacturas?accion=listar" class="flex items-center text-white font-bold hover:text-black hover:bg-white border border-brown-500 p-2 rounded-md">
+                        Gestión de Facturas
+                    </a>
                 </li>
+                <li>
+                    <a href="ctrlFormasDePago?accion=listar" class="flex items-center text-white font-bold hover:text-black hover:bg-white border border-brown-500 p-2 rounded-md">
+                        Gestión de Formas de Pago
+                    </a>
+                </li>
+                 <li>
+                    <a href="ctrlInventarios?accion=listar" class="flex items-center text-white font-bold hover:text-black hover:bg-white border border-brown-500 p-2 rounded-md">
+                        Gestión de Inventario
+                    </a>
+                </li>
+                <li>
+                    <a href="ctrlProveedor?accion=listar" class="flex items-center text-white font-bold hover:text-black hover:bg-white border border-brown-500 p-2 rounded-md">
+                        Gestión de Proveedores
+                    </a>
+                </li>
+                 <li>
+                    <a href="ctrlUsuarios?accion=listar" class="flex items-center text-white font-bold hover:text-black hover:bg-white border border-brown-500 p-2 rounded-md">
+                        Gestión de Usuarios
+                    </a>
+                </li>
+                <li>
+                    <a href="ctrlVentas?accion=listar" class="flex items-center text-white font-bold hover:text-black hover:bg-white border border-brown-500 p-2 rounded-md">
+                        Gestión de Ventas
+                    </a>
+                </li>
+                <li>
+                    <a href="ctrlZapatos?accion=listar" class="flex items-center text-white font-bold hover:text-black hover:bg-white border border-brown-500 p-2 rounded-md">
+                        Gestión de Zapatos
+                    </a>
+                </li>
+                <li>
+                    <a href="ctrlRoles?accion=listar" class="flex items-center text-white font-bold hover:text-black hover:bg-white border border-brown-500 p-2 rounded-md">
+                        Gestión de Roles
+                    </a>
+                </li>
+                
             </ul>
         </nav>
         <div class="px-6 py-4">

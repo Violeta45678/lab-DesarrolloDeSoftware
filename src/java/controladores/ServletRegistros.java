@@ -90,7 +90,7 @@ public class ServletRegistros extends HttpServlet {
                     psCliente.executeUpdate();
 
                     connection.commit();
-                    displayMessage(out, "Éxito", "Registro exitoso. ¡Bienvenido a ShoeUp!", "inicio_Sesion.jsp");
+                    displayMessage(out, "Éxito", "Registro exitoso. ¡Bienvenido a ShoeUp!", "registro.jsp");
                 } catch (SQLException e) {
                     try {
                         connection.rollback();

@@ -1,4 +1,7 @@
-import java.util.Date;
+package modelos;
+
+import java.sql.*;
+import java.util.ArrayList;
 
 public class Factura {
     private int idFactura;
@@ -7,7 +10,6 @@ public class Factura {
     private int empleadoId;
     private double total;
 
-    
     public Factura(int idFactura, Date fecha, int clienteId, int empleadoId, double total) {
         this.idFactura = idFactura;
         this.fecha = fecha;
@@ -16,44 +18,121 @@ public class Factura {
         this.total = total;
     }
 
-    // Getters y Setters
-    public int getIdFactura() {
-        return idFactura;
+    public int getIdFactura() { return idFactura; }
+    public Date getFecha() { return fecha; }
+    public int getClienteId() { return clienteId; }
+    public int getEmpleadoId() { return empleadoId; }
+    public double getTotal() { return total; }
+
+    public static ArrayList<Factura> listarFacturas() {
+        ArrayList<Factura> lista = new ArrayList<>();
+        String query = "SELECT * FROM Facturas";
+        conexion conn = new conexion();
+
+        try (Connection connection = conn.conectarMYSQL();
+             PreparedStatement ps = connection.prepareStatement(query);
+             ResultSet rs = ps.executeQuery()) {
+
+            while (rs.next()) {
+                Factura factura = new Factura(
+                    rs.getInt("id_factura"),
+                    rs.getDate("fecha"),
+                    rs.getInt("cliente_id"),
+                    rs.getInt("empleado_id"),
+                    rs.getDouble("total")
+                );
+                lista.add(factura);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            conn.Desconectar();
+        }
+        return lista;
     }
 
-    public void setIdFactura(int idFactura) {
-        this.idFactura = idFactura;
+    public static Factura buscarFactura(int id) {
+        String query = "SELECT * FROM Facturas WHERE id_factura = ?";
+        conexion conn = new conexion();
+
+        try (Connection connection = conn.conectarMYSQL();
+             PreparedStatement ps = connection.prepareStatement(query)) {
+
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                return new Factura(
+                    rs.getInt("id_factura"),
+                    rs.getDate("fecha"),
+                    rs.getInt("cliente_id"),
+                    rs.getInt("empleado_id"),
+                    rs.getDouble("total")
+                );
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            conn.Desconectar();
+        }
+        return null;
     }
 
-    public Date getFecha() {
-        return fecha;
+    public static boolean insertarFactura(Date fecha, int clienteId, int empleadoId, double total) {
+        String query = "INSERT INTO Facturas (fecha, cliente_id, empleado_id, total) VALUES (?, ?, ?, ?)";
+        conexion conn = new conexion();
+
+        try (Connection connection = conn.conectarMYSQL();
+             PreparedStatement ps = connection.prepareStatement(query)) {
+
+            ps.setDate(1, new java.sql.Date(fecha.getTime()));
+            ps.setInt(2, clienteId);
+            ps.setInt(3, empleadoId);
+            ps.setDouble(4, total);
+            return ps.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            conn.Desconectar();
+        }
     }
 
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
+    public static boolean actualizarFactura(int id, Date fecha, int clienteId, int empleadoId, double total) {
+        String query = "UPDATE Facturas SET fecha = ?, cliente_id = ?, empleado_id = ?, total = ? WHERE id_factura = ?";
+        conexion conn = new conexion();
+
+        try (Connection connection = conn.conectarMYSQL();
+             PreparedStatement ps = connection.prepareStatement(query)) {
+
+            ps.setDate(1, new java.sql.Date(fecha.getTime()));
+            ps.setInt(2, clienteId);
+            ps.setInt(3, empleadoId);
+            ps.setDouble(4, total);
+            ps.setInt(5, id);
+            return ps.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            conn.Desconectar();
+        }
     }
 
-    public int getClienteId() {
-        return clienteId;
-    }
+    public static boolean eliminarFactura(int id) {
+        String query = "DELETE FROM Facturas WHERE id_factura = ?";
+        conexion conn = new conexion();
 
-    public void setClienteId(int clienteId) {
-        this.clienteId = clienteId;
-    }
+        try (Connection connection = conn.conectarMYSQL();
+             PreparedStatement ps = connection.prepareStatement(query)) {
 
-    public int getEmpleadoId() {
-        return empleadoId;
-    }
-
-    public void setEmpleadoId(int empleadoId) {
-        this.empleadoId = empleadoId;
-    }
-
-    public double getTotal() {
-        return total;
-    }
-
-    public void setTotal(double total) {
-        this.total = total;
+            ps.setInt(1, id);
+            return ps.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            conn.Desconectar();
+        }
     }
 }

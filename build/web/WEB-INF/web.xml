@@ -16,6 +16,54 @@
         <servlet-name>cerrarSesion</servlet-name>
         <servlet-class>controladores.cerrarSesion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletError</servlet-name>
+        <servlet-class>controladores.ServletError</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ValidarSesion</servlet-name>
+        <servlet-class>controladores.ValidarSesion</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ctrlCategorias</servlet-name>
+        <servlet-class>controladores.ctrlCategorias</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ctrlClientes</servlet-name>
+        <servlet-class>controladores.ctrlClientes</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ctrlFacturas</servlet-name>
+        <servlet-class>controladores.ctrlFacturas</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ctrlFormasDePago</servlet-name>
+        <servlet-class>controladores.ctrlFormasDePago</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ctrlInventarios</servlet-name>
+        <servlet-class>controladores.ctrlInventarios</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ctrlProveedor</servlet-name>
+        <servlet-class>controladores.ctrlProveedor</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ctrlUsuarios</servlet-name>
+        <servlet-class>controladores.ctrlUsuarios</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ctrlVentas</servlet-name>
+        <servlet-class>controladores.ctrlVentas</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ctrlZapatos</servlet-name>
+        <servlet-class>controladores.ctrlZapatos</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ctrlRoles</servlet-name>
+        <servlet-class>controladores.ctrlRoles</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletRegistros</servlet-name>
         <url-pattern>/ServletRegistros</url-pattern>
@@ -32,4 +80,64 @@
         <servlet-name>cerrarSesion</servlet-name>
         <url-pattern>/cerrarSesion</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletError</servlet-name>
+        <url-pattern>/ServletError</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ValidarSesion</servlet-name>
+        <url-pattern>/ValidarSesion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ctrlCategorias</servlet-name>
+        <url-pattern>/ctrlCategorias</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ctrlClientes</servlet-name>
+        <url-pattern>/ctrlClientes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ctrlFacturas</servlet-name>
+        <url-pattern>/ctrlFacturas</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ctrlFormasDePago</servlet-name>
+        <url-pattern>/ctrlFormasDePago</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ctrlInventarios</servlet-name>
+        <url-pattern>/ctrlInventarios</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ctrlProveedor</servlet-name>
+        <url-pattern>/ctrlProveedor</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ctrlUsuarios</servlet-name>
+        <url-pattern>/ctrlUsuarios</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ctrlVentas</servlet-name>
+        <url-pattern>/ctrlVentas</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ctrlZapatos</servlet-name>
+        <url-pattern>/ctrlZapatos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ctrlRoles</servlet-name>
+        <url-pattern>/ctrlRoles</url-pattern>
+    </servlet-mapping>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/ServletError</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/ServletError</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/ServletError</location>
+    </error-page>
 </web-app>

@@ -8,11 +8,10 @@ public class conexion {
     // Configuración de la base de datos
     String servidor = "localhost:3306"; 
     String baseDatos = "zapateriabd"; 
-    String usuario = "prueba-user"; 
-    String clave = "raul0034.";
+    String usuario = "root"; 
+    String clave = "12345";
     // URL de conexión con configuración adicional
-    String url = "jdbc:mysql://" + servidor + "/" + baseDatos + "?useTimezone=true&serverTimezone=UTC&useSSL=false";
-
+    String url = "jdbc:mysql://localhost:3306/zapateriabd";
     private Connection conexion = null;
 
     public Connection conectarMYSQL() {

@@ -93,17 +93,17 @@ public class Servelet_Inicio_Secion extends HttpServlet {
     }
 
     private String getRedirectPage(String rol) {
-      
         switch (rol) {
             case "Cliente":
                 return "vista_cliente.jsp";
+            case "Vendedor":
+                return "index.jsp";
             case "Gerente":
                 return "sidebar.html";
-            default:
-                return "inicio_Sesion.jsp";
+                default:
+                return "inicio_Sesion.html";
         }
     }
-
     private String hashPassword(String password) {
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");

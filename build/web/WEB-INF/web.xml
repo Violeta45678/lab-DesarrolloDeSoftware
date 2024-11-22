@@ -32,6 +32,30 @@
         <servlet-name>ctrlFormasDePago</servlet-name>
         <servlet-class>controladores.ctrlFormasDePago</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ctrlInventarios</servlet-name>
+        <servlet-class>controladores.ctrlInventarios</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ctrlProveedor</servlet-name>
+        <servlet-class>controladores.ctrlProveedor</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ctrlUsuarios</servlet-name>
+        <servlet-class>controladores.ctrlUsuarios</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ctrlVentas</servlet-name>
+        <servlet-class>controladores.ctrlVentas</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ctrlZapatos</servlet-name>
+        <servlet-class>controladores.ctrlZapatos</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ctrlRoles</servlet-name>
+        <servlet-class>controladores.ctrlRoles</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletRegistros</servlet-name>
         <url-pattern>/ServletRegistros</url-pattern>
@@ -63,5 +87,29 @@
     <servlet-mapping>
         <servlet-name>ctrlFormasDePago</servlet-name>
         <url-pattern>/ctrlFormasDePago</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ctrlInventarios</servlet-name>
+        <url-pattern>/ctrlInventarios</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ctrlProveedor</servlet-name>
+        <url-pattern>/ctrlProveedor</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ctrlUsuarios</servlet-name>
+        <url-pattern>/ctrlUsuarios</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ctrlVentas</servlet-name>
+        <url-pattern>/ctrlVentas</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ctrlZapatos</servlet-name>
+        <url-pattern>/ctrlZapatos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ctrlRoles</servlet-name>
+        <url-pattern>/ctrlRoles</url-pattern>
     </servlet-mapping>
 </web-app>

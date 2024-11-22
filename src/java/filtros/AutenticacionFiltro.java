@@ -24,17 +24,17 @@ public class AutenticacionFiltro implements Filter {
 
         String uri = httpRequest.getRequestURI();
 
-        if (uri.endsWith("inicio_Sesion.jsp") || uri.contains("/static/")) {
-            chain.doFilter(request, response);
-            return;
-        }
+        // Verificar si la solicitud es para páginas protegidas
+        if (uri.endsWith("sidebar.html") || uri.endsWith("index.jsp")) {
+            HttpSession session = httpRequest.getSession(false);
 
-        HttpSession session = httpRequest.getSession(false);
-
-        if (session != null && session.getAttribute("usuario") != null) {
-            chain.doFilter(request, response);
+            if (session != null && session.getAttribute("usuario") != null) {
+                chain.doFilter(request, response); // Continuar si hay sesión válida
+            } else {
+                httpResponse.sendRedirect("inicio_Sesion.jsp"); // Redirigir al login
+            }
         } else {
-            httpResponse.sendRedirect("inicio_Sesion.jsp");
+            chain.doFilter(request, response); // Continuar si no es una página protegida
         }
     }
 
